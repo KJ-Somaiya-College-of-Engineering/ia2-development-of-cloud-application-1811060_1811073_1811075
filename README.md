@@ -6,3 +6,12 @@ Tracer is URL shortening service. (Extended to URL personalisation as instructed
 | Service 1 | Dashboard Service | Serves Frontend | AWS Lambda + API Gateway |
 | Service 2 | Redirection Service | Serves URL Redirects | AWS Lambda + API Gateway |
 | Service 3 | Frontend Server | Interface to Users | Serves build of frontend files) | 
+---
+
+## Submitted by
+
+```
+Nimish Vithalani - 1811060
+Aman Desai - 1811073
+Rushabh Doshi - 1811075
+```
