@@ -1,6 +1,8 @@
 # Tracer
 Tracer is URL shortening service. (Extended to URL personalisation as instructed). It is hosted on AWS, with microservice architecture.
 
-Service 1: Dashboard Service
-Service 2: Redirection Service
-Service 3: Frontend Server (Serves build of frontend files)
+| # | Service Name | Purpose | Deployed to |
+|-----------|-------------------|-----------------|-------------------------|
+| Service 1 | Dashboard Service | Serves Frontend | AWS Lambda + API Gateway |
+| Service 2 | Redirection Service | Serves URL Redirects | AWS Lambda + API Gateway |
+| Service 3 | Frontend Server | Interface to Users | Serves build of frontend files) | 
