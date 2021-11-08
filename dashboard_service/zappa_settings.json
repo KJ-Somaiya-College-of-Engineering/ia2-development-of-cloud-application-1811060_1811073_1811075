@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "app_function": "app.app",
+        "aws_region": "ap-south-1",
+        "profile_name": "zappabot",
+        "project_name": "tracerv2",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-7lh0u4mgu"
+    }
+}

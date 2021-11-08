@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="@SyscapeTracer" />
+        <meta name="twitter:creator" content="@SyscapeTracer" />
+    {% if og %}
+        {% if og.title %}
+        <title>{{ og.title }}</title>
+        <meta name="twitter:title" content="{{ og.title }}" />
+        {% else %}
+        <title>TracerRedirect</title>
+        {% endif %}
+
+        {% if og.description %}
+        <meta name="og:description" content="{{ og.description }}"/>
+        <meta name="twitter:description" content="{{ og.description }}"/>
+        {% endif %}
+
+        {% if og.image %}
+        <meta name="og:image" content="{{ og.image }}"/>
+        <meta name="twitter:image:src" content="{{ og.image }}"/>
+        {% endif %}
+
+        {% if og.url %}
+        <meta name="og:url" content="{{ og.url }}">
+        {% endif %}
+    {% elif title %}
+        <title>{{ title }}</title> 
+    {% else %}
+        <title>TracerRedirect</title>
+    {% endif %}
+</head>
+
+<body>
+    <div id="errorReport"></div>
+    <center>
+            <img src="https://raw.githubusercontent.com/syscape/TracerDocs/master/img/logoName.jpeg" height="80px" width="190px" alt="">
+            <hr>
+            <div style="padding: 5%;">
+                <div id="loading" class="loader"></div>
+                <div id="redirectDialogue" class="redirectText" style="display: none;">
+                    Still Here ? Click Below to Go to Your Expected Link <br>
+                    <a href="{{ redirect }}">{{ title }}</a>
+                </div>
+            </div>
+            
+            <!-- <a href="https://blog.amandesai.live">link</a> -->
+    </center>
+    <div style="display: none;">
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.battery() }}
+            {{ form.availableRam() }}
+            {{ form.submit() }}
+        </form>
+    </div>
+    <script>
+        setTimeout(()=>{
+            document.getElementById('redirectDialogue').style.display = "block";
+            document.getElementById('loading').style.display = "none";
+        }, 3000)
+    </script>
+    <script>
+        const battery = document.getElementById('battery');
+        const userAgent = document.getElementById('userAgent');
+        const availableRam = document.getElementById('availableRam');
+
+
+        try {
+            navigator.getBattery().then(function (obj) {
+                battery.value = obj.level * 100;
+                availableRam.value = navigator.deviceMemory;
+                submit.click();
+            })
+        } catch (error) {
+            try {
+                availableRam.value = navigator.deviceMemory;
+                submit.click();
+            } catch (error) {
+                submit.click();
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+<style>
+.redirectText {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 200%;
+}
+
+center {
+    padding-top: 10%;
+    padding: 5%;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #66d2b3;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>

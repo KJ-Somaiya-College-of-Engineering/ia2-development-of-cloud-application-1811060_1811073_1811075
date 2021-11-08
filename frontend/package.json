@@ -1,0 +1,30 @@
+{
+  "name": "Tracer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.5",
+    "@nuxtjs/pwa": "^3.3.5",
+    "chart.js": "^2.9.4",
+    "core-js": "^3.8.3",
+    "cropperjs": "^1.5.11",
+    "node-sass": "^5.0.0",
+    "nuxt": "^2.14.12",
+    "nuxt-buefy": "^0.4.4",
+    "sass-loader": "^7.0.0",
+    "typed.js": "^2.0.11",
+    "v-clipboard": "^2.2.3",
+    "vue-chartjs": "^3.5.1",
+    "vue-toasted": "^1.1.28"
+  },
+  "devDependencies": {
+    "fibers": "^5.0.0",
+    "sass": "^1.32.6"
+  }
+}
